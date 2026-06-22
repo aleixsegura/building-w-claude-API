@@ -1,0 +1,14 @@
+[
+  {
+    "task": "Parse an AWS S3 bucket name and object key from an S3 URI in the format s3://bucket-name/path/to/object",
+    "format": "regex"
+  },
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that specifies runtime, timeout, memory size, and environment variables",
+    "format": "json"
+  },
+  {
+    "task": "Write a Python function that validates an AWS IAM role ARN format and extracts the role name from it",
+    "format": "python"
+  }
+]
