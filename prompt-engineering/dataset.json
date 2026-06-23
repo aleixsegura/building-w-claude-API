@@ -1,0 +1,46 @@
+[
+  {
+    "task": "Extract topics from scholarly text",
+    "content": "The study examines the role of neuroplasticity in cognitive rehabilitation following traumatic brain injury. Using functional magnetic resonance imaging (fMRI), researchers tracked neural reorganization patterns in 45 patients over a 12-month period. Results indicate that intensive cognitive therapy combined with physical rehabilitation significantly enhances synaptic rewiring and functional recovery. The findings suggest that early intervention protocols may optimize neurological outcomes and reduce long-term disability.",
+    "solution_criteria": [
+      "Topics should include neuroscience-related concepts (neuroplasticity, neural reorganization, synaptic rewiring)",
+      "Medical conditions and treatments should be identified (traumatic brain injury, cognitive rehabilitation, physical rehabilitation)",
+      "Research methodologies should be captured (fMRI, longitudinal study design)",
+      "Topics should reflect the main research focus and clinical implications",
+      "Extracted topics should be specific enough to distinguish this study from general neuroscience research"
+    ]
+  },
+  {
+    "task": "Extract topics from scholarly text",
+    "content": "This paper investigates the intersection of climate change and urban agriculture in developing nations. Through qualitative interviews with 120 smallholder farmers in sub-Saharan Africa, we document how shifting precipitation patterns and temperature fluctuations affect crop yields and food security. Our analysis reveals that community-based adaptation strategies, including drought-resistant crop varieties and water harvesting techniques, provide viable pathways for building climate resilience while maintaining agricultural productivity.",
+    "solution_criteria": [
+      "Environmental topics should be identified (climate change, precipitation patterns, temperature fluctuations)",
+      "Agricultural and food-related concepts must be captured (crop yields, food security, smallholder farming)",
+      "Geographic and socioeconomic context should be reflected (developing nations, sub-Saharan Africa)",
+      "Adaptation and sustainability strategies should be recognized (drought-resistant varieties, water harvesting)",
+      "Topics should demonstrate understanding of the interconnected nature of climate and agriculture"
+    ]
+  },
+  {
+    "task": "Extract topics from scholarly text",
+    "content": "This research explores the mechanisms of machine learning bias in natural language processing systems. We analyzed 50 pre-trained language models and identified systematic disparities in how they process text containing demographic identifiers. Our findings demonstrate that training data composition significantly influences model outputs, with underrepresented groups experiencing higher error rates. We propose a debiasing framework utilizing adversarial training and balanced dataset curation to mitigate these algorithmic inequities.",
+    "solution_criteria": [
+      "Computer science and AI topics should be identified (machine learning, natural language processing, language models)",
+      "Ethical and social concerns should be captured (bias, algorithmic inequities, fairness)",
+      "Technical methodologies should be recognized (adversarial training, dataset curation)",
+      "Topics should reflect both the problem identification and proposed solutions",
+      "Extracted topics should demonstrate understanding of AI ethics and technical implementation"
+    ]
+  },
+  {
+    "task": "Extract topics from scholarly text",
+    "content": "This longitudinal study examines the relationship between early childhood socioeconomic status and long-term educational attainment across three generations. Using data from 2,500 families tracked over 30 years, we employ multilevel regression analysis to isolate the effects of parental income, educational background, and access to quality schooling. Results indicate that intergenerational mobility is significantly constrained by initial socioeconomic disadvantage, though targeted educational interventions demonstrate modest but meaningful improvements in breaking cycles of poverty.",
+    "solution_criteria": [
+      "Social science and education topics should be identified (socioeconomic status, educational attainment, intergenerational mobility)",
+      "Research design elements should be captured (longitudinal study, multilevel regression analysis)",
+      "Key variables and factors should be recognized (parental income, educational background, school quality)",
+      "Policy-relevant concepts should be included (educational interventions, poverty reduction)",
+      "Topics should reflect both structural inequalities and potential solutions"
+    ]
+  }
+]

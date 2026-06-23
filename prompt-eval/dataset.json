@@ -1,14 +1,17 @@
 [
   {
-    "task": "Parse an AWS S3 bucket name and object key from an S3 URI in the format s3://bucket-name/path/to/object",
-    "format": "regex"
+    "task": "Create an AWS Lambda function configuration that specifies a 256MB memory allocation, 30-second timeout, and environment variables for database connection strings",
+    "format": "json",
+    "solution_criteria": "Must include MemorySize set to 256, Timeout set to 30, Environment object with Variables containing at least one database connection string, and proper JSON structure"
   },
   {
-    "task": "Create a JSON configuration object for an AWS Lambda function that specifies runtime, timeout, memory size, and environment variables",
-    "format": "json"
+    "task": "Write a Python function that extracts the AWS account ID and region from an S3 ARN string",
+    "format": "python",
+    "solution_criteria": "Function must parse S3 ARN format (arn:aws:s3:::bucket-name/key), extract account ID if present, identify region, return both values as a tuple or dictionary, and handle invalid ARN formats gracefully"
   },
   {
-    "task": "Write a Python function that validates an AWS IAM role ARN format and extracts the role name from it",
-    "format": "python"
+    "task": "Create a regex pattern that validates AWS IAM role names according to AWS naming conventions",
+    "format": "regex",
+    "solution_criteria": "Pattern must allow alphanumeric characters, hyphens, and underscores, enforce minimum 1 and maximum 64 character length, and reject names starting with invalid characters per AWS IAM specifications"
   }
 ]

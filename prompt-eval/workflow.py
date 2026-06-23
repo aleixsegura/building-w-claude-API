@@ -12,30 +12,32 @@ headers, or footers.
 
 import json
 from typing import Any
+from grader import CombinedGrader
 from interaction import append_message, chat
-from .grader import CombinedGrader
 
 
 def run_prompt(test_case: dict[str, str]) -> str:
     prompt = f"""
         Please provide a solution for the following task:
-    {test_case['task']}
+    {test_case['task']} using the format: {test_case['format']}
 
     * Respond only with Python, JSON, or a plain Regex
+    * If the format is python, produce python code only, if the format is json, produce json text only, and if the format is
+    regex produce regex expressions only.
     * Do not add any comments or commentary or explanation
-
+    * Do not include formatting code fences like ```python or ```json
     """
 
     messages = []
     append_message(messages, 'user', prompt)
     return chat(messages)
+    # A function to ensure no code fences are returned should be applied before return llm response
 
 
 def run_test_case(test_case: dict[str, str]) -> dict[str, Any]:
     output = run_prompt(test_case)
 
-    score =  CombinedGrader().grade(test_case, output)
-
+    score = CombinedGrader().grade(test_case, output)
     return {
         'output': output,
         'test_case': test_case,
@@ -66,12 +68,12 @@ def generate_dataset() -> None:
     [
         {
             "task": "Description of task",
-            "format": "python | json | regex"
+            "format": "python | json | regex",
+            "solution_criteria": "e.g: Must include runtime, memory size, timeout, and basic structure for AWS Lambda configuration.",
         },
         ...aditional
     ]
     ```
-    
     * Focus on tasks that can be solved by writing a single Python function, a single JSON object, or a single regex
     * Focus on tasks that do not require writing much code
 
@@ -80,10 +82,13 @@ def generate_dataset() -> None:
 
     messages = []
 
-    system = "Generate only the json text not any kind of formatting and no markdown instructions like <```language>"
+    # !! IMPORTANT: A lot of Json used in training come with ```json, so its difficult to enforce the response to not contain
+    # this characters, even with a system prompt.
+    system = "Do NOT include markdown formatting keywords in you final response. Produce ONLY the text to generate the json."
 
     append_message(messages, 'user', prompt)
-    text = chat(messages, system=system)
+    append_message(messages, 'assistant', '[') # Prefill
+    text = '[' + chat(messages, system=system)
 
     # Deserializes raw model text to python obj (list)
     data = json.loads(text)

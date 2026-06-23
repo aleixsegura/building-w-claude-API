@@ -15,6 +15,7 @@ class PythonValidation(ValidationStrategy):
             ast.parse(text.strip())
             return 10
         except SyntaxError:
+            print(f'python val: {text.strip()}')
             return 0
 
 class JsonValidation(ValidationStrategy):
@@ -23,6 +24,7 @@ class JsonValidation(ValidationStrategy):
             json.loads(text.strip())
             return 10
         except json.JSONDecodeError:
+            print(f'json val: {text.strip()}')
             return 0
 
 class RegexValidation(ValidationStrategy):
@@ -31,4 +33,5 @@ class RegexValidation(ValidationStrategy):
             re.compile(text.strip())
             return 10
         except re.error:
+            print(f'regex val: {text.strip()}')
             return 0
